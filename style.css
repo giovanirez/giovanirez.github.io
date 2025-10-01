@@ -1,0 +1,355 @@
+/* --- CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
+:root {
+    --primary-color: #2C3E50;
+    /* Azul escuro/Chumbo */
+    --accent-color: #3498DB;
+    /* Azul mais claro para botões e links */
+    --light-gray-color: #ECF0F1;
+    --white-color: #FFFFFF;
+    --text-color: #555;
+    --header-height: 70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+    /* Ajusta a rolagem para o início da seção */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.bg-light {
+    background-color: var(--light-gray-color);
+}
+
+.bg-dark {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.bg-dark .section-title,
+.bg-dark .contact-subtitle {
+    color: var(--white-color);
+}
+
+/* --- COMPONENTES REUTILIZÁVEIS --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #2980B9;
+    transform: translateY(-3px);
+}
+
+.card {
+    background: var(--white-color);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- CABEÇALHO E NAVEGAÇÃO --- */
+.main-header {
+    background-color: var(--white-color);
+    height: var(--header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.7rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.logo strong {
+    font-weight: 700;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- SEÇÃO HERO --- */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* --- SEÇÃO SERVIÇOS --- */
+.services-grid {
+    display: flex;
+    gap: 30px;
+}
+
+/* --- SEÇÃO SOBRE --- */
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-icon {
+    flex: 1;
+    text-align: center;
+}
+
+.about-icon i {
+    font-size: 10rem;
+    color: var(--accent-color);
+    opacity: 0.8;
+}
+
+.about-text .section-title {
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
+/* --- SEÇÃO PROCESSOS --- */
+.process-steps {
+    display: flex;
+    gap: 30px;
+    text-align: center;
+}
+
+.step {
+    flex: 1;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-gray-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.step h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* --- SEÇÃO CONTATO --- */
+.contact-subtitle {
+    text-align: center;
+    margin: -1.5rem 0 2rem;
+    font-weight: 300;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    align-self: center;
+}
+
+/* --- RODAPÉ --- */
+.main-footer {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--light-gray-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE --- */
+@media(max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Esconde o menu principal e prepara para um menu hambúrguer (não implementado com JS aqui) */
+    .main-nav {
+        display: none;
+    }
+
+    .main-header .container {
+        justify-content: center;
+    }
+
+    .services-grid,
+    .about-flex,
+    .process-steps {
+        flex-direction: column;
+    }
+
+    .about-text .section-title {
+        text-align: center;
+    }
+
+    .about-icon {
+        margin-top: 2rem;
+    }
+}
+
+@media(max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
